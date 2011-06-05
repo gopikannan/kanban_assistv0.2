@@ -3,11 +3,16 @@ KanbanAssistv02::Application.routes.draw do
     get "/login" => "devise/sessions#new"
     get "/logout" => "devise/sessions#destroy"
   end
+
   match "/welcomeuser" => 'kanban_assist#welcome_user'
+  match "/usergroup" => 'kanban_assist#user_group'
+
   match "/play" => 'play#play'
   
   match "play/playresults" => 'play#playresults'
-  root :to => 'kanban_assist#welcome_user'
+
+  root :to => 'kanban_assist#user_group'
+  #root :to => 'kanban_assist#welcome_user'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

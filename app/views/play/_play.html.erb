@@ -1,105 +1,98 @@
 <% content_for(:head) do %>
-    <%=stylesheet_link_tag 'demo_table' %>
-    <%=stylesheet_link_tag 'demo_table_jui' %>
-    <%=javascript_include_tag 'jquery.dataTables'%>
-    <%=javascript_include_tag 'highcharts'%>
-    <%=javascript_include_tag 'play'%>
-    <%=javascript_include_tag 'graphs'%>
+    <%= stylesheet_link_tag 'demo_table' %>
+    <%= stylesheet_link_tag 'demo_table_jui' %>
+    <%= javascript_include_tag 'jquery.dataTables' %>
+    <%= javascript_include_tag 'highcharts' %>
+    <%= javascript_include_tag 'play' %>
+    <%= javascript_include_tag 'graphs' %>
 <% end %>
 <div data-layout='{"type": "flexGrid", "hgap": 3, "vgap": 2, "columns": 2, "rows": 2}' class="flex-grid">
   <div class="c" style="height: 35%">
     <h3 class="playHeader">Play Dashboard</h3>
 
-    <%= form_tag("play/playresults", :method => "get",:id=>"playForm" ,:class=>'play_Form') do %>
+    <%= form_tag("play/playresults", :method => "get", :id=>"playForm", :class=>'play_Form') do %>
         <div data-layout='{"type": "grid", "hgap": 0, "vgap": 3, "columns": 3, "rows": 1}' class="grid">
 
           <div class="dashboard">
             <p>
-            <%= label_tag(:q, "Item:") %>
-            <%= collection_select(:play, :user_group_item_id, Item.all, :id, :name) %>
+              <%= label_tag(:q, "Item:") %>
+              <%= collection_select(:play, :user_group_item_id, Item.all, :id, :name) %>
             </p>
-             <p>
-            <label for="from">From</label>
-                <input type="text" id="from" name="from"/>
 
-                <label for="to" style="margin-right: 8%">to</label>
-                <input type="text" id="to" name="to"/>
+            <p>
+              <label for="from">From</label>
+              <input type="text" id="from" name="from"/>
+
+              <label for="to" style="margin-right: 8%">to</label>
+              <input type="text" id="to" name="to"/>
 
             </p>
-           </div>
+          </div>
 
           <div class="dashboard">
-             <p>
-                <label for="parLevel">Parlevel:</label>
-                <input type="text" id="parLevel" name="par" style="border:0; color:#f6931f; font-weight:bold; width: 50%"/>
+            <p>
+              <label for="parLevel">Parlevel:</label>
+              <input type="text" id="parLevel" name="par" style="border:0; color:#f6931f; font-weight:bold; width: 50%"/>
             </p>
 
             <div id="parLevel-slider" style="height:10px;margin: 2% ; width: 85%"></div>
             <p>
-            <label for="reorderpoint">Reorderpoint:</label>
-            <input type="text" id="reorderpoint" name="reorder" style="border:0; color:#f6931f; font-weight:bold; width:50%"/>
+              <label for="reorderpoint">Reorderpoint:</label>
+              <input type="text" id="reorderpoint" name="reorder" style="border:0; color:#f6931f; font-weight:bold; width:50%"/>
             </p>
 
             <div id="reorderpoint-slider-range" style="height:10px;margin: 2%;width:85%"></div>
           </div>
-           <div class="dashboard">
+          <div class="dashboard">
 
-           <%= submit_tag("Play", :id => "playButton") %>
+            <%= submit_tag("Play", :id => "playButton") %>
+          </div>
         </div>
-         </div>
 
     <% end %>
 
-    </div>
-    <div class="c" style="height: 50%">
+  </div>
+  <div class="c" style="height: 50%">
 
-      <div id="demandGraph" style="height:inherit;margin-bottom: 2%;margin-top: 1%">
-       </div>
-    </div>
-    <div class="c" style="height:65%">
-      <h3 class="playHeader">Play Output</h3>
-      <p>
-      <table cellpadding="0" cellspacing="0" border="0" class="display" id="playOutput">
-       <thead>
-		<tr>
-            <th>ReorderPoint</th>
-            <th>Stockouts</th>
-			<th>TotalCost</th>
-			<th>StockoutPenalty</th>
-			<th>Holdingcost</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr class="stockout_occured">
-			<td>1</td>
-			<td>2</td>
-			<td>1000</td>
-            <td>500</td>
-			<td> 4</td>
-		</tr>
-        <tr class="stockout_occured">
-			<td>2</td>
-			<td>2</td>
-			<td>1500</td>
-			<td>500</td>
-			<td> 4</td>
-		</tr>
-        <tr class="stockout_not_occured">
-			<td>1</td>
-			<td>0</td>
-			<td>1000</td>
-			<td>500</td>
-			<td> 4</td>
-		</tr>
-        </tbody>
-      </table>
-      </p>
-    </div>
-    <div class="c" style="height:50%" >
-      <div id="playOutputChart" style="height:inherit;margin: 1%"/>
-
+    <div id="demandGraph" style="height:inherit;margin-bottom: 2%;margin-top: 1%">
     </div>
   </div>
+  <div class="c" style="height:65%;overflow-y: auto;">
+    <p>
+    <h3 class="playHeader">Play Output</h3>
+
+    <table cellpadding="0" cellspacing="0" border="0" class="display" id="playOutput">
+
+      <thead>
+      <tr>
+      <th>
+        Reorderpoint
+      </th>
+      <th>
+        Total cost
+      </th>
+      <th>
+        Stockout
+      </th>
+      <th>
+        Stockout penalty
+      </th>
+      <th>
+        Holding cost
+      </th>
+      </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+     </p>
+  </div>
+  <div class="c" style="height:50%">
+    <div id="playOutputChart" style="height:inherit;margin: 1%"/>
+
+  </div>
+</div>
 
 
 

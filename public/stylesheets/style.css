@@ -22,13 +22,13 @@ body {
     margin-bottom: 0px;
     color: #8c8c8c;
 }
-
+/*
 p {
-    line-height: 17px;
-    margin: 11px 0 10px 0;
+    line-height: 5%;
+    margin: 10% 0 10% 0;
     padding: 0px;
     display: block;
-}
+}  */
 
 h2 {
     color: #9f9f9f;
@@ -46,6 +46,11 @@ ul {
 
 a {
     color: #93B300;
+
+}
+.playOutput{
+    overflow-y:auto;
+    overflow-x:hidden;
 
 }
 
@@ -77,6 +82,7 @@ blockquote {
     height: 100%;
 
 }
+
 
 /**** Top ***/
 
@@ -166,6 +172,8 @@ blockquote {
     margin-left: auto;
     margin-right: auto;
     height: inherit;
+
+
 }
 
 #content h2 {
@@ -185,10 +193,12 @@ blockquote {
 }
 
 #left {
-    width: 390px;
+    margin-top: 4%;
+    width: 40%;
     float: left;
     display: block;
-    margin-left: 20px;
+    margin-right: 8%;
+    margin-left: 5%;
 
 }
 
@@ -211,14 +221,16 @@ blockquote {
 /**** Sidebar ***/
 
 #right {
-    width: 315px;
+    width: 20%;
     float: right;
     display: block;
-    margin-top: 10px;
+    margin-top: 6%;
+    margin-bottom: 12%;
+    margin-right: 7%;
 }
 
 #right .box {
-    width: 24em; /*280px*/
+
     background: #F6F9FB;
     border: 1px solid #E1E1E1;
     padding: 10px 10px 15px 10px;
@@ -235,15 +247,15 @@ blockquote {
 }
 
 #right .box h2 {
-    font-size: 1.1em;
+
     margin: 0px 0 0px 0;
     padding: 0px 0 5px 0;
 }
 
 #right .box a {
     margin: 10px 0 10px 0;
-    color: #93B300;
-    font-size: 10px;
+
+
 }
 
 #right .box p {
@@ -348,7 +360,7 @@ div.field, div.actions {
     /*height: 400px;*/
     width: 100%;
     /*height: inherit;*/
-    overflow: hidden;
+    height:90%;
 }
 
 .c {
@@ -404,4 +416,7 @@ div.field, div.actions {
     border: 0px;
     cursor: pointer;
 
+}
+#tabs-1{
+   height:85%;
 }

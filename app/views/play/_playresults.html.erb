@@ -1,0 +1,16 @@
+{
+"sEcho": "1",
+"iTotalRecords": "<%= @iTotalRecords %>",
+"iTotalDisplayRecords": "<%= @iTotalDisplayRecords %>",
+"aaData" : [
+<% @playOutputs.each do |playOutput| %>
+    [   "<%= playOutput.reorderpoint %>",
+    "<%=  playOutput.stockouts %>",
+    "<%=  playOutput.orderingcost %>",
+    "<%=  playOutput.stockout_penaltycost %>",
+    "<%=  playOutput.holdingcost %>"
+    ]
+
+<% end %>
+]}
+

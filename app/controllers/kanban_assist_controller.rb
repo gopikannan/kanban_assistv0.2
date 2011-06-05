@@ -24,4 +24,8 @@ class KanbanAssistController < ApplicationController
         end
     end
 
+    def user_group
+      p "In user_group"
+    end
+
 end
