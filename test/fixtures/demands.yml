@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  item_id: 1
+  demandcount: 1
+  startdate: 2011-12-14
+  enddate: 2011-12-14
+
+two:
+  item_id: 1
+  demandcount: 1
+  startdate: 2011-12-14
+  enddate: 2011-12-14

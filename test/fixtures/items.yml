@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  box_quantity: 1
+  orederingcost: 9.99
+  stockoutpenaltycost: 9.99
+  holdingcost: 9.99
+
+two:
+  name: MyString
+  box_quantity: 1
+  orederingcost: 9.99
+  stockoutpenaltycost: 9.99
+  holdingcost: 9.99

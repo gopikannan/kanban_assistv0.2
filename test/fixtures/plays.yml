@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  item_id: 1
+  parlevel: 1
+  maxReorderPoint: 1
+  minReorderPoint: 1
+  startdate: 2011-12-16
+  enddate: 2011-12-16
+
+two:
+  item_id: 1
+  parlevel: 1
+  maxReorderPoint: 1
+  minReorderPoint: 1
+  startdate: 2011-12-16
+  enddate: 2011-12-16

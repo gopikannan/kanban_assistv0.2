@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  users_groups_id: 1
+  identifier: MyString
+  orderingcost: 9.99
+  holdingcost: 9.99
+  stockoutpenaltycost: 9.99
+  boxquantity: 1
+
+two:
+  users_groups_id: 1
+  identifier: MyString
+  orderingcost: 9.99
+  holdingcost: 9.99
+  stockoutpenaltycost: 9.99
+  boxquantity: 1

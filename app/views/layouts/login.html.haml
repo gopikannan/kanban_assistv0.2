@@ -1,0 +1,37 @@
+!!! Strict
+/ ==========================================================
+/ Created by Devit Schizoper
+/ Created HomePages http://LoadFoo.starzonewebhost.com
+/ Created Day 01.12.2006
+/ ==========================================================
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %title Kanban Assist Beta v2
+    =stylesheet_link_tag 'style.css'
+    =javascript_include_tag 'textsizer.js'
+    =javascript_include_tag 'rel.js' 
+    
+  %body
+    #wrapper
+      #top
+        %h2
+          %a{:href => "#", :title => "Back to main page"} Kanban Assist - Beta v0.1
+        #menu
+          %ul
+            %li
+              %a.current{:href => "#"} Home
+            %li
+              %a{:href => "#"} About 
+            %li
+              %a{:href => "#"} Contact 
+            %li
+              = render 'devise/menu/login_items'
+      #left
+        = render :partial => 'kanban_assist/login_info'
+      #right
+        =yield
+      #clear
+      #footer
+        %p
+          Copyright 2011 KanbanAssist beta v1.0 by Prakash!!!
+
