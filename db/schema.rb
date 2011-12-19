@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111216171736) do
+ActiveRecord::Schema.define(:version => 20111219001135) do
 
   create_table "datasets", :force => true do |t|
     t.string   "name"
@@ -56,16 +56,8 @@ ActiveRecord::Schema.define(:version => 20111216171736) do
     t.string   "identifier"
   end
 
-  create_table "plays", :force => true do |t|
-    t.integer  "item_id"
-    t.integer  "parlevel"
-    t.integer  "maxReorderPoint"
-    t.integer  "minReorderPoint"
-    t.date     "startdate"
-    t.date     "enddate"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "plays" because of following StandardError
+#   Unknown type 'user_group_item_id' for column 'item_id'
 
   create_table "rails_admin_histories", :force => true do |t|
     t.string   "message"

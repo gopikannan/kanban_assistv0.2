@@ -20,6 +20,7 @@ p {
 	line-height: 17px;
 	margin: 11px 0 10px 0;
 	padding: 0px;
+	display: block;
 }
 
 h2 {
@@ -44,6 +45,10 @@ a:hover {
 	text-decoration: none;
 }
 
+form {
+  border : 1px solid #000;
+  padding : 5px;
+}
 blockquote{
 	background: #F7FDE3;
 	color: #606060;
@@ -172,7 +177,7 @@ blockquote{
 	float:left;
 	display: block;
        margin-left:20px;
-	display: inline;
+
 }
 
 #left p {
@@ -180,7 +185,7 @@ blockquote{
 	float:left;
 	display: block;
         margin-left:200px;
-	display: inline;
+
 }
 
 #left img{
@@ -188,7 +193,7 @@ blockquote{
 	float:left;
 	display: block;
        margin-left:200px;
-	display: inline;
+
 }
 
 /**** Sidebar ***/
