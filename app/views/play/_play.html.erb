@@ -1,0 +1,66 @@
+<div data-layout='{"type": "grid", "hgap": 3, "vgap": 3, "columns": 2, "rows": 2}' class="grid">
+  <div class="c">
+
+
+    <%= form_tag("play/playresults", :method => "get", :style =>"display:inline") do %>
+        <%= label_tag(:q, "Item:") %>
+        <%= collection_select(:play, :user_group_item_id, Item.all, :id, :name) %>  <br/>
+
+        <p>
+                    <label for="parLevel">Parlevel:</label>
+                    <input type="text" id="parLevel" style="border:0; color:#f6931f; font-weight:bold;" />
+                </p>
+
+                <div id="parLevel-slider" style="height:10px;"></div>
+
+
+        <p>
+            <label for="reorderpoint">Reorderpoint:</label>
+            <input type="text" id="reorderpoint" style="border:0; color:#f6931f; font-weight:bold;" />
+        </p>
+
+        <div id="reorderpoint-slider-range" style="height:10px;"></div>
+
+        <%= label_tag(:q, "StartDate:") %>
+        <%= date_select :play, :startdate %>
+        <br/>
+        <%= label_tag(:q, "EndDate:") %>
+        <%= date_select :play, :enddate %>
+        <br/>
+        <%= submit_tag("Play") %>
+        <!--
+        <%= label_tag(:q, "Item:") %>
+        <%= collection_select(:play, :user_group_item_id, Item.all, :id, :name) %>  <br/>
+        <%= label_tag(:q, "ParLevel:") %>
+        <%= text_field_tag(:parlevel) %>
+        <br/>
+        <%= label_tag(:q, "Max Reorder Point:") %>
+        <%= text_field_tag(:q) %>
+        <br/>
+        <%= label_tag(:q, "Min Reorder Point:") %>
+        <%= text_field_tag(:q) %>
+        <br/>
+        <%= label_tag(:q, "StartDate:") %>
+        <%= date_select :play, :startdate %>
+        <br/>
+        <%= label_tag(:q, "EndDate:") %>
+        <%= date_select :play, :enddate %>
+        <br/>
+        <%= submit_tag("Play") %>
+    -->
+    <% end %>
+
+  </div>
+  <div class="c">
+    Two
+  </div>
+  <div class="c">
+    Three
+  </div>
+  <div class="c">
+    Four
+  </div>
+</div>
+
+
+

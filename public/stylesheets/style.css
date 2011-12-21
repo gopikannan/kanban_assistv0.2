@@ -13,6 +13,7 @@ body {
 	background-repeat: repeat-x;
 	font-family: Verdana, Arial, sans-serif;
         font-size: .8em;
+    height: 480px;
 
 
 }
@@ -44,6 +45,9 @@ a {
 
 
 }
+#tabs{
+    height: inherit;
+}
 #tabs a{
       font-size: .8em;
 }
@@ -53,10 +57,7 @@ a:hover {
 	text-decoration: none;
 }
 
-form {
-  border : 1px solid #000;
-  padding : 5px;
-}
+
 blockquote{
 	background: #F7FDE3;
 	color: #606060;
@@ -67,10 +68,12 @@ blockquote{
 /**** Main Container ***/
 
 
-#wrap {
+#wrapper {
        margin-left: auto;
        margin-right: auto;
-       width: 730px;
+       width: 100%;
+        height: 100%;
+
 }
 
 
@@ -164,6 +167,7 @@ blockquote{
 	margin-top:0px;
 	margin-left:auto;
 	margin-right:auto;
+    height: inherit;
 }
 
 #content h2 {
@@ -291,22 +295,41 @@ blockquote{
 	height:1px;
 	overflow:hidden;
 }
+/***Play layout**/
+.playColumns li
+ {
+    float: left;
+    width: 45%;
+    text-align:left;
+    margin-left:.1em;
+    padding:.2em;
+    padding-left:.5em;
+    background-color:#efefef;
+    margin-bottom:.1em;
+ }
+.alternate
+{
+    background-color:#ffffff;
+}
 
 
 /**** Footer ***/
 
 
 #footer {
-        margin: 40px auto 0 auto;
+       /* margin: 40px auto 0 auto;*/
 	text-align: center;
 	border-top: dotted 1px gray;
-	padding: 20px 0 20px 0;
-	width: 70%;
+	padding: 1%;
+	width: 100%;
 }
 
 #footer p {
 	margin: 0px;
 	padding: 0;
+    font-family: Verdana, Arial, sans-serif;
+        font-size: .8em;
+    font-weight: bold;
 }
 
 div.field, div.actions {
@@ -316,4 +339,35 @@ div.field, div.actions {
 .container {
   width: 710px;
 }
+
+/** Jlayout**/
+.grid {
+                /*height: 400px;*/
+				overflow: auto;
+			}
+
+			.c {
+				/*background-color: rgb(220,220,220);*/
+				border: 1px solid rgb(200,200,200);
+				text-align: left;
+				width: 50%;
+				height: 50%;
+				display: inline-block;
+                font-family: Verdana, Arial, sans-serif;
+        font-size: .8em;
+			}
+
+
+			.large {
+				font-size: 3.5em;
+			}
+
+			.small {
+				font-size: 2em;
+			}
+
+			.medium {
+				font-size: 3em;
+			}
+
 
