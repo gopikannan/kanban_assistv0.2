@@ -1,0 +1,21 @@
+
+<h2 value = <%= flash[:message] %>> </h2>
+<div>
+<%= form_tag("play/playresults", :method => "get") do %>
+   
+  <%= label_tag(:q,"Item:")%>
+  <%= collection_select(:play, :user_group_item_id,Item.all, :id,:name)%>  <br/>
+  <%= label_tag(:q,"ParLevel:")%>
+  <%= text_field_tag(:parlevel)%><br/>
+  <%= label_tag(:q,"Max Reorder Point:")%>
+  <%= text_field_tag(:q)%><br/>
+  <%= label_tag(:q,"Min Reorder Point:")%>
+  <%= text_field_tag(:q)%><br/>
+  <%= label_tag(:q,"StartDate:")%>
+  <%= date_select :play, :startdate%><br/>
+  <%= label_tag(:q,"EndDate:")%>
+  <%= date_select :play, :enddate%><br/>
+  <%= submit_tag("Play")%>
+
+<% end %>
+</div>
