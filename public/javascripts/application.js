@@ -2,6 +2,7 @@
 // This file is automatically included by javascript_include_tag :defaults
 jQuery(function() {
     jQuery("#tabs").tabs();
+    $('.flex-grid').layout();
     $('.grid').layout();
 
     $( "#parLevel-slider" ).slider({
@@ -29,8 +30,24 @@ jQuery(function() {
             $("#reorderpoint").val(ui.values[ 0 ] + " - " + ui.values[ 1 ]);
         }
     });
-    $("#reorderpoint").val("$" + $("#reorderpoint-slider-range").slider("values", 0) +
-        " - $" + $("#reorderpoint-slider-range").slider("values", 1));
+    $("#reorderpoint").val( $("#reorderpoint-slider-range").slider("values", 0) +
+        " - " + $("#reorderpoint-slider-range").slider("values", 1));
+
+    var dates = $( "#from, #to" ).datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 1,
+                onSelect: function( selectedDate ) {
+                    var option = this.id == "from" ? "minDate" : "maxDate",
+                        instance = $( this ).data( "datepicker" ),
+                        date = $.datepicker.parseDate(
+                            instance.settings.dateFormat ||
+                            $.datepicker._defaults.dateFormat,
+                            selectedDate, instance.settings );
+                    dates.not( this ).datepicker( "option", option, date );
+                }
+            });
+
 
 //    playLayout();
 
