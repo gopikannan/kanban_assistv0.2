@@ -2,7 +2,9 @@
     <%=stylesheet_link_tag 'demo_table' %>
     <%=stylesheet_link_tag 'demo_table_jui' %>
     <%=javascript_include_tag 'jquery.dataTables'%>
+    <%=javascript_include_tag 'highcharts'%>
     <%=javascript_include_tag 'play'%>
+    <%=javascript_include_tag 'graphs'%>
 <% end %>
 <div data-layout='{"type": "flexGrid", "hgap": 3, "vgap": 2, "columns": 2, "rows": 2}' class="flex-grid">
   <div class="c" style="height: 35%">
@@ -50,7 +52,9 @@
 
     </div>
     <div class="c" style="height: 50%">
-      <h3 class="playHeader">Demand Graph</h3>
+
+      <div id="demandGraph" style="height:inherit;margin-bottom: 2%;margin-top: 1%">
+       </div>
     </div>
     <div class="c" style="height:65%">
       <h3 class="playHeader">Play Output</h3>
@@ -91,8 +95,9 @@
       </table>
       </p>
     </div>
-    <div class="c" style="height:50%">
-      <h3 class="playHeader">Output Graph</h3>
+    <div class="c" style="height:50%" >
+      <div id="playOutputChart" style="height:inherit;margin: 1%"/>
+
     </div>
   </div>
 

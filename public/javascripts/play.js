@@ -13,8 +13,13 @@ jQuery(document).ready(function() {
         jQuery.ajax({
             type: 'POST',
             url: '/play/playresults',
-            data: {user_group_item_id:"1",
-                option:"2"},
+            data: {user_group_item_id:jQuery('#play_user_group_item_id').val(),
+                startdate:jQuery('#from').val(),
+                enddate:jQuery('#to').val(),
+                parlevel:jQuery('#parLevel').val(),
+                minReorderPoint:jQuery("#reorderpoint-slider-range").slider("values", 0),
+                maxReorderPoint:jQuery("#reorderpoint-slider-range").slider("values", 1)
+                },
                 success:function(data, textStatus) {
                     document.getElementById("playOutput").innerHTML = "<p style='color:red'>Coming Soon !! </p>";
                 },
