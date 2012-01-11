@@ -4,7 +4,7 @@
       <p>
       <%= label_tag("Select your group for this session") %>
       <p>
-      <%= collection_select(:play, :user_group_item_id, current_user.groups.all, :id, :name) %>
+      <%= collection_select(:play, :user_group_id, current_user.groups.all, :id, :name) %>
        </p>
 
 

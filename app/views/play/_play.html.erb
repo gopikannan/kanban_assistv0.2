@@ -16,7 +16,7 @@
           <div class="dashboard">
             <p>
               <%= label_tag(:q, "Item:") %>
-              <%= collection_select(:play, :user_group_item_id, Item.all, :id, :name) %>
+              <%= collection_select(:play, :user_group_item_id, @user_group_items, :id, :name) %>
             </p>
 
             <p>
@@ -75,10 +75,16 @@
         Stockout
       </th>
       <th>
-        Stockout penalty
+        Stockout Penalty
       </th>
       <th>
-        Holding cost
+        Ordering Cost
+      </th>
+        <th>
+           Holding Cost
+      </th>
+       <th>
+           Over Pars
       </th>
       </tr>
       </thead>

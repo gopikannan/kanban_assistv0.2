@@ -7,18 +7,30 @@ class PlayController < ApplicationController
 
   def playresults
 
-    p "In Play Results"
-    p params
+
     @play = Play.new
     @play.user_group_item_id = params[:user_group_item_id]
     @play.parlevel = params[:parlevel]
-    @play.minReorderPoint = params[:minreorderpoint]
-    @play.maxReorderPoint = params[:maxreorderpoint]
+    @play.minReorderPoint = params[:minReorderPoint]
+    @play.maxReorderPoint = params[:maxReorderPoint]
     @play.startdate = params[:startdate]
     @play.enddate = params[:enddate]
 
+
+
+    #_demands = [4,4,1,2,4]
+    _demands = Array.new
+    _demands[0] = UserGroupDemand.new(:demandcount=>0,:leadtime=>0)
+    _demands[1] = UserGroupDemand.new(:demandcount=>4,:leadtime=>2)
+    _demands[2] = UserGroupDemand.new(:demandcount=>4,:leadtime=>3)
+    _demands[3] = UserGroupDemand.new(:demandcount=>1,:leadtime=>2)
+    _demands[4] = UserGroupDemand.new(:demandcount=>2,:leadtime=>3)
+    _demands[5] = UserGroupDemand.new(:demandcount=>4,:leadtime=>2)
+
+    @play.demands = _demands
     Array @playOutputs=getTotalCostForReorderpoint()
-    p @playOutputs.size()
+
+
 
     #@play.user_group
     # @play.save
@@ -35,17 +47,51 @@ class PlayController < ApplicationController
   end
 
   private
-  def getTotalCostForReorderpoint()
-    p "in total costs for reorder point"
-    Array _playOutputs = Array.new
-    _reorderpoint = 1
 
-    for _reorderpoint in 1..10
+  #tentative algo
+  #find the timeperiod for the input date range and the demand
+  #timeperiod should be tuple of index and day_id(monday,tue, etc))
+  #Get the ideal lead time cycle for the item
+  #initialize datastructures
+      #Actual Lead Time (is n't this part of the demand????'))
+      #IdealLeadTime (This is going to be a cycle.. 7 records)
+      #demand[] demand of the item in the given time range
+      #onHandInventory[]
+      #quantityOrdered[]
+      #stockOuts[]
+      #overPars[]
+
+      #boxQuantity
+  #once this is done... run the logic..
+
+   #costs
+      #holdingCost;
+	    #orderingCostOfTheItem;
+	    #overParPenalityCost;
+	    #penalityCost;
+      #totalCost
+
+  def getTotalCostForReorderpoint()
+
+    Array _playOutputs = Array.new
+    _counter = 0
+
+
+
+
+    #delta = @play.startdate - @play.enddate
+   # p delta.days
+
+
+    for _reorderpoint in (@play.minReorderPoint...@play.maxReorderPoint+1)
       #the logic should go here
-      _playOutputs[_reorderpoint-1] = PlayOutput.new(@play.user_group_item,@play.parlevel,_reorderpoint,2,40,1000,10,0)
+      _playOutputs[_counter] = @play.findCostsForReorderPoint(_reorderpoint)
+      _counter=_counter+1
 
     end
     return _playOutputs
   end
+
+
 
 end

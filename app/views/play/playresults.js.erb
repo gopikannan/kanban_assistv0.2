@@ -5,11 +5,13 @@
 "aaData" : [
 <% @playOutputs.each do |playOutput| %>
     <% @count = @count - 1 %>
-    [   "<%= playOutput.reorderpoint %>",
-    "<%=  playOutput.stockouts %>",
-    "<%=  playOutput.orderingcost %>",
-    "<%=  playOutput.stockout_penaltycost %>",
-    "<%=  playOutput.holdingcost %>"
+    [   "<%= playOutput.reorderPoint %>",
+    "<%=  playOutput.totalCost %>",
+    "<%=  playOutput.stockOuts %>",
+    "<%=  playOutput.stockoutPenaltyCost %>",
+    "<%=  playOutput.orderingCost %>",
+    "<%=  playOutput.holdingCost %>",
+    "<%=  playOutput.overPars %>"
     ]
     <% if @count != 0  %>
     ,

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111219001135) do
+ActiveRecord::Schema.define(:version => 20120105183715) do
 
   create_table "datasets", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20111219001135) do
     t.date     "enddate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "leadtime"
   end
 
   create_table "domains", :force => true do |t|
@@ -56,8 +57,17 @@ ActiveRecord::Schema.define(:version => 20111219001135) do
     t.string   "identifier"
   end
 
-# Could not dump table "plays" because of following StandardError
-#   Unknown type 'user_group_item_id' for column 'item_id'
+  create_table "plays", :force => true do |t|
+    t.integer  "parlevel"
+    t.integer  "maxReorderPoint"
+    t.integer  "minReorderPoint"
+    t.date     "startdate"
+    t.date     "enddate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_group_id"
+    t.integer  "user_group_item_id"
+  end
 
   create_table "rails_admin_histories", :force => true do |t|
     t.string   "message"
@@ -79,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20111219001135) do
     t.integer  "demandcount"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "leadtime"
   end
 
   create_table "user_group_items", :force => true do |t|
@@ -91,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20111219001135) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_group_id"
+    t.string   "name"
   end
 
   create_table "user_groups", :force => true do |t|
