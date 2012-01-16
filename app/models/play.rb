@@ -13,7 +13,7 @@ class Play < ActiveRecord::Base
   public
 
   def findCostsForReorderPoint(reorderPoint)
-    logger.warn reorderPoint
+    #logger.warn reorderPoint
     _timePeriod = @demands.size()-1
     _onHandInventory = Array.new(_timePeriod+1)
     _stockOuts = Array.new(_timePeriod+1)

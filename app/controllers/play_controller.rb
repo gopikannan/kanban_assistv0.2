@@ -13,21 +13,23 @@ class PlayController < ApplicationController
     @play.parlevel = params[:parlevel]
     @play.minReorderPoint = params[:minReorderPoint]
     @play.maxReorderPoint = params[:maxReorderPoint]
-    @play.startdate = params[:startdate]
-    @play.enddate = params[:enddate]
+    @play.startdate = Date.strptime(params[:startdate],'%m/%d/%Y')
+    @play.enddate = Date.strptime(params[:enddate],'%m/%d/%Y')
 
-
+    p @play.startdate
+    p @play.enddate
 
     #_demands = [4,4,1,2,4]
-    _demands = Array.new
-    _demands[0] = UserGroupDemand.new(:demandcount=>0,:leadtime=>0)
-    _demands[1] = UserGroupDemand.new(:demandcount=>4,:leadtime=>2)
-    _demands[2] = UserGroupDemand.new(:demandcount=>4,:leadtime=>3)
-    _demands[3] = UserGroupDemand.new(:demandcount=>1,:leadtime=>2)
-    _demands[4] = UserGroupDemand.new(:demandcount=>2,:leadtime=>3)
-    _demands[5] = UserGroupDemand.new(:demandcount=>4,:leadtime=>2)
 
-    @play.demands = _demands
+   # _demands = Array.new
+    #_demands[0] = UserGroupDemand.new(:demandcount=>0,:leadtime=>0)
+    #_demands[1] = UserGroupDemand.new(:demandcount=>4,:leadtime=>2)
+    #_demands[2] = UserGroupDemand.new(:demandcount=>4,:leadtime=>3)
+    #_demands[3] = UserGroupDemand.new(:demandcount=>1,:leadtime=>2)
+    #_demands[4] = UserGroupDemand.new(:demandcount=>2,:leadtime=>3)
+    #_demands[5] = UserGroupDemand.new(:demandcount=>4,:leadtime=>2)
+
+    @play.demands = UserGroupDemand.where(:startdate=>@play.startdate...@play.enddate,:user_group_item_id=>@play.user_group_item)
     Array @playOutputs=getTotalCostForReorderpoint()
 
 
