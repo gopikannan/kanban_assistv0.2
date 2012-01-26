@@ -1,0 +1,40 @@
+<% content_for(:head) do %>
+    <%= stylesheet_link_tag 'vtabs' %>
+       <%= stylesheet_link_tag 'demo_table' %>
+    <%= stylesheet_link_tag 'demo_table_jui' %>
+    <%= javascript_include_tag 'jquery.dataTables' %>
+    <%= javascript_include_tag 'kbadmin' %>
+<% end %>
+<div id="vtab">
+    <ul>
+        <li class="domain"></li>
+        <li class="user"></li>
+        <li class="group"></li>
+        <li class="dataset"></li>
+    </ul>
+    <div>
+        <h4>Domain</h4>
+         Create Domain form
+    </div>
+    <div>
+        <h4>User</h4>
+        Create user
+    </div>
+    <div>
+        <h4>Group</h4>
+        Create Group
+    </div>
+  <div>
+        <p>
+        <h4>Create New Dataset</h4>
+        <%= render :partial=>'dataset/itemDataUpload'%>
+        </p>
+        <p>
+        <h4>View Dataset</h4>
+        <%= render :partial=>'dataset/viewDataset'%>
+        </p>
+    </div>
+</div>
+
+
+

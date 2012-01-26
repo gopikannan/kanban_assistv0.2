@@ -16,10 +16,12 @@ gem 'haml-rails'
 gem 'jquery-rails'
 
 gem 'devise'
-gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git' 
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'paperclip'
 gem 'rcov'
-
+gem 'spreadsheet','0.6.5.9'
 gem 'active_scaffold_vho'
+
 
 #gem 'view_mapper'
 # Use unicorn as the web server

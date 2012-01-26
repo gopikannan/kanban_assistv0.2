@@ -1,0 +1,35 @@
+<% content_for(:head) do %>
+    <%= stylesheet_link_tag('jquery.fileupload-ui') %>
+    <%= javascript_include_tag 'jquery.fileupload', 'jquery.fileupload-ui'  %>
+<% end %>
+<div class="files">
+<%= form_for @itemDataUpload, :html => { :class => "upload", :multipart => true } do |f| %>
+      <p>
+      <%= label_tag(:q,"Name")%>&nbsp&nbsp&nbsp
+      <%= text_field_tag(:datasetName)%><br/>
+      </p>
+      <div class="fileupload-buttonbar">
+
+                  <label class="fileinput-button">
+                    <p>
+                      <span>Item&nbsp&nbsp&nbsp&nbsp&nbsp </span>
+                              <%= f.file_field :item %>
+                     </p>
+                    <p>
+                       <span>Demand</span>
+                              <%= f.file_field :demand %>
+                    </p>
+
+                  </label>
+                  <button type="submit" class="start">Start upload</button>
+                  <button type="reset" class="cancel">Cancel upload</button>
+            </p>
+              </div>
+
+<% end %>
+  <div class="fileupload-content">
+          <table class="files"></table>
+          <div class="fileupload-progressbar"></div>
+      </div>
+
+</div>

@@ -1,0 +1,20 @@
+{
+"sEcho": "1",
+"iTotalRecords": "<%= @iTotalRecords %>",
+"iTotalDisplayRecords": "<%= @iTotalDisplayRecords %>",
+"aaData" : [
+<% @userGroupItems.each do |item| %>
+    <% @count = @count - 1 %>
+    [   [   "<%= item.identifier %>",
+        "<%= item.name %>",
+    "<%=  item.boxquantity %>",
+    "<%=  item.orderingcost %>",
+    "<%=  item.holdingcost %>",
+    "<%=  item.stockoutpenalty %>",
+    "<%=  item.stockoutpenalty %>",
+    ]
+    <% if @count != 0  %>
+    ,
+    <%end%>
+<% end %>
+]}

@@ -10,8 +10,13 @@ KanbanAssistv02::Application.routes.draw do
   match "/play" => 'play#play'
   
   match "play/playresults" => 'play#playresults'
+  match "/getItems" => 'kanban_assist#getItems'
+  match "/kbadmin/dataset" => 'dataset#upload'
+  match "/kbadmin"  => 'admin#index'
 
   root :to => 'kanban_assist#user_group'
+
+  resources :item_data_uploads
   #root :to => 'kanban_assist#welcome_user'
   
   # The priority is based upon order of creation:

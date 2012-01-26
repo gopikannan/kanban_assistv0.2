@@ -84,7 +84,9 @@ class PlayController < ApplicationController
     #delta = @play.startdate - @play.enddate
    # p delta.days
 
-
+    if(@play.demands.size() ==  0)
+      return _playOutputs
+    end
     for _reorderpoint in (@play.minReorderPoint...@play.maxReorderPoint+1)
       #the logic should go here
       _playOutputs[_counter] = @play.findCostsForReorderPoint(_reorderpoint)

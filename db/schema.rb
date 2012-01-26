@@ -10,11 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120105183715) do
+ActiveRecord::Schema.define(:version => 20120119224528) do
 
   create_table "datasets", :force => true do |t|
     t.string   "name"
     t.date     "creation_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "item_file_path"
+    t.string   "demand_file_paths"
+  end
+
+  create_table "demand_data_uploads", :force => true do |t|
+    t.string   "demand_file_name"
+    t.string   "demand_content_type"
+    t.integer  "demand_file_size"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,6 +53,14 @@ ActiveRecord::Schema.define(:version => 20120105183715) do
     t.datetime "updated_at"
     t.integer  "domain_id"
     t.integer  "dataset_id"
+  end
+
+  create_table "item_data_uploads", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "item_file_name"
+    t.string   "item_content_type"
+    t.integer  "item_file_size"
   end
 
   create_table "items", :force => true do |t|

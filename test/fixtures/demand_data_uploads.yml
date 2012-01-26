@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  demand_file_name: MyString
+  demand_content_type: MyString
+  demand_file_size: 1
+
+two:
+  demand_file_name: MyString
+  demand_content_type: MyString
+  demand_file_size: 1
