@@ -12,6 +12,7 @@ KanbanAssistv02::Application.routes.draw do
   match "play/playresults" => 'play#playresults'
   match "/getItems" => 'kanban_assist#getItems'
   match "/kbadmin/dataset" => 'dataset#upload'
+  match "kbadmin/dataset/getItems" => 'dataset#getItems'
   match "/kbadmin"  => 'admin#index'
 
   root :to => 'kanban_assist#user_group'
